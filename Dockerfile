@@ -17,7 +17,8 @@ COPY requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 COPY dynamodump.py /dynamodump.py
-RUN chmod 0644 /etc/cron.d/dynamodb-backup & touch /var/log/cron.log && chmod +x /dynamodump.py
+COPY run.sh /run.sh
+RUN chmod 0644 /etc/cron.d/dynamodb-backup && touch /var/log/cron.log && chmod +x /dynamodump.py /run.sh
 
 USER root:root
 CMD cron && tail -f /var/log/cron.log
