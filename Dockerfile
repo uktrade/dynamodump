@@ -21,4 +21,4 @@ COPY run.sh /run.sh
 RUN chmod 0644 /etc/cron.d/dynamodb-backup && touch /var/log/cron.log && chmod +x /dynamodump.py /run.sh
 
 USER root:root
-CMD cron && tail -f /var/log/cron.log
+CMD env > /.env && cron && tail -f /var/log/cron.log
