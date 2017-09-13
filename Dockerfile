@@ -8,7 +8,7 @@ ENV S3_BUCKET null
 
 RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup && \
     apt-get update && \
-    apt-get install -y cron jq python-pip && \
+    apt-get install -y cron jq && \
     pip install awscli && \
     rm -rf /var/lib/apt/lists/*
 
