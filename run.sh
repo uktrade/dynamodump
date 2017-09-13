@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 FILENAME=$(date +%s) 
 
 echo "Backup Start @" $(date -d @$FILENAME)
