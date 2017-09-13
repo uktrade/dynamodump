@@ -1,0 +1,1 @@
+0 * * * * root FILENAME=$(date +%s) /dynamodump.py -m backup -a tar -s $DYNAMODB_TABLE -b $S3_BUCKET --dumpPath $FILENAME --log INFO >> /var/log/cron.log 2>&1 && rm -rf $FILENAME $FILENAME.tar.bz2
